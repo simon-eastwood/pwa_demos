@@ -33,7 +33,7 @@
 				return response.json()
 			}
 
-			fetch('https://opensky-network.org/api/states/all', {mode: 'cors'})
+			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' })
 				.then(status)
 				.then(json)
 				.then(function (data) {
@@ -45,6 +45,18 @@
 					document.getElementById("output").innerHTML = error;
 				});
 
+			fetch('./data1.json', { mode: 'cors' })
+				.then(status)
+				.then(json)
+				.then(function (data) {
+					console.log('data 1 Request succeeded with JSON response', data);
+					document.getElementById("output").innerHTML = JSON.stringify(data);
+					document.getElementById("time").innerHTML = data['time'];
+				}).catch(function (error) {
+					console.log('data 1 Request failed', error);
+					document.getElementById("output").innerHTML = error;
+				});
+
 		}
 
 	</script>
@@ -52,7 +64,7 @@
 
 <body onload="loadData()">
 	<h1>Demonstration of preloading files with service worker</h1>
-	Flight Data as of <span id="time"></span><br/>
+	Flight Data as of <span id="time"></span><br />
 	<span id="output"></span>
 </body>
 
