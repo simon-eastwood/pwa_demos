@@ -25,6 +25,7 @@ function prefetch(urlList) {
 			//url.search += (url.search ? '&' : '?') + 'cache-bust=' + now;
 
 			var request = new Request(url, {});
+			console.log ('prefetching ' + url);
 			return fetch(request).then(function (response) {
 				if (response.status >= 400) {
 					throw new Error('request for ' + urlToPrefetch +
