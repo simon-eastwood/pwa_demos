@@ -38,9 +38,9 @@ function prefetch(urlList) {
 		});
 	});
 
-/* 	return Promise.all(cachePromises).then(function () {
+ 	return Promise.all(cachePromises).then(function () {
 		console.log('Pre-fetching complete.');
-	}); */
+	}); 
 }
 
 
