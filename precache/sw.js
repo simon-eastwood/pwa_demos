@@ -10,9 +10,11 @@ var urlsToPrefetchOnSpaStartup = [
 
 
 function prefetch(urlList) {
+	var now = Date.now();
+
 	var cachePromises = caches.open(CURRENT_CACHES.prefetch).then(function (cache) {
 
-		urlList.map(function (urlToPrefetch) {
+		return urlList.map(function (urlToPrefetch) {
 			// This constructs a new URL object using the service worker's script location as the base
 			// for relative URLs.
 			var url = new URL(urlToPrefetch, location.href);
@@ -22,7 +24,7 @@ function prefetch(urlList) {
 			// If we were to get back a response from the HTTP browser cache for this precaching request
 			// then that stale response would be used indefinitely, or at least until the next time
 			// the service worker script changes triggering the install flow.
-			//url.search += (url.search ? '&' : '?') + 'cache-bust=' + now;
+			url.search += (url.search ? '&' : '?') + 'cache-bust=' + now;
 
 			var request = new Request(url, {});
 			console.log ('prefetching ' + url);
