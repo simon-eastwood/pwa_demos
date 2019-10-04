@@ -8,6 +8,8 @@ self.addEventListener('fetch', function (event) {
 
 	if (requestURL.pathname.endsWith('.webmanifest')) {
 		console.log ('[Service Worker] SPA is starting up');
+	} else {
+		console.log (requestURL.pathname + ' does not end with .webmanifest');
 	}
 	console.log('[Service Worker] Doing Fetch');
 	return fetch(event.request);
