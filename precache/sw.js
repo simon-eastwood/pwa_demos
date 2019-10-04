@@ -2,7 +2,8 @@
 
 
 self.addEventListener('fetch', function (event) {
-	console.log('[Service Worker] Fetch requested');
+	const requestURL = new URL(event.request.url);
+	console.log('[Service Worker] Fetch requested for ' +requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 	console.log('[Service Worker] Doing Fetch');
 	return fetch(event.request);
