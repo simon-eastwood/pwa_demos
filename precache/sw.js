@@ -9,7 +9,7 @@ var urlsToPrefetchOnSpaStartup = [
 
 
 function prefetch(urlList) {
-	var cachePromises = urlsToPrefetch.map(function (urlToPrefetch) {
+	var cachePromises = urlList.map(function (urlToPrefetch) {
 		// This constructs a new URL object using the service worker's script location as the base
 		// for relative URLs.
 		var url = new URL(urlToPrefetch, location.href);
@@ -29,7 +29,7 @@ function prefetch(urlList) {
 			}
 
 			// Use the original URL without the cache-busting parameter as the key for cache.put().
-			return cache.put(urlToPrefetch, response);
+			return cache.put(urlsToPrefetchOnSpaStartup, response);
 		}).catch(function (error) {
 			console.error('Not caching ' + urlToPrefetch + ' due to ' + error);
 		});
