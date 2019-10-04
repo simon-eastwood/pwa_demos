@@ -29,18 +29,18 @@ function prefetch(urlList) {
 					throw new Error('request for ' + urlToPrefetch +
 						' failed with status ' + response.statusText);
 				}
-
+				console.log ('cacheing ' + urlToPrefetch);
 				// Use the original URL without the cache-busting parameter as the key for cache.put().
-				return cache.put(urlsToPrefetchOnSpaStartup, response);
+				return cache.put(urlToPrefetch, response);
 			}).catch(function (error) {
 				console.error('Not caching ' + urlToPrefetch + ' due to ' + error);
 			});
 		});
 	});
 
-	return Promise.all(cachePromises).then(function () {
+/* 	return Promise.all(cachePromises).then(function () {
 		console.log('Pre-fetching complete.');
-	});
+	}); */
 }
 
 
