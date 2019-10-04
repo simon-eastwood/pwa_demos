@@ -14,7 +14,7 @@ function prefetch(urlList) {
 
 	var cachePromises = caches.open(CURRENT_CACHES.prefetch).then(function (cache) {
 
-		return urlList.map(function (urlToPrefetch) {
+		var promises = urlList.map(function (urlToPrefetch) {
 			// This constructs a new URL object using the service worker's script location as the base
 			// for relative URLs.
 			var url = new URL(urlToPrefetch, location.href);
@@ -40,6 +40,8 @@ function prefetch(urlList) {
 				console.error('Not caching ' + urlToPrefetch + ' due to ' + error);
 			});
 		});
+		console.log ("returning " + promises);
+		return promises;
 	});
 	console.log (cachePromises);
 	return Promise.all(cachePromises).then(function () {
