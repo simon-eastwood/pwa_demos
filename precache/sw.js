@@ -50,7 +50,7 @@ function prefetch(urlList) {
 
 self.addEventListener('fetch', function (event) {
 	const requestURL = new URL(event.request.url);
-	console.log('[Service Worker] Fetch requested for ' + requestURL.pathname);
+	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
 	if (requestURL.pathname.endsWith('.webmanifest')) {
