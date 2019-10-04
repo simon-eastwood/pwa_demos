@@ -12,7 +12,7 @@ var urlsToPrefetchOnSpaStartup = [
 function prefetch(urlList) {
 	var now = Date.now();
 
-	var cachePromises = caches.open(CURRENT_CACHES.prefetch).then(function (cache) {
+	return caches.open(CURRENT_CACHES.prefetch).then(function (cache) {
 
 		var promises = urlList.map(function (urlToPrefetch) {
 			// This constructs a new URL object using the service worker's script location as the base
@@ -43,10 +43,7 @@ function prefetch(urlList) {
 		console.log ("returning " + promises);
 		return promises;
 	});
-	console.log (cachePromises);
-	return Promise.all(cachePromises).then(function () {
-		console.log('Pre-fetching complete.');
-	}); 
+ 
 }
 
 
