@@ -4,7 +4,8 @@ var CURRENT_CACHES = {
 	prefetch: 'prefetch-cache-v' + CACHE_VERSION
 };
 var urlsToPrefetchOnSpaStartup = [
-	'data.json'
+	'data1.json',
+	'data2.json'
 ];
 
 
