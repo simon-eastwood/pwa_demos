@@ -25,7 +25,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "412020acfe9f742607e1b8b0e5e11a05"
+    "revision": "f0302ac0c1785f09c68ab32a27479125"
   },
   {
     "url": "mypwa.webmanifest",
@@ -37,7 +37,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "192b464c2fea2d32f9a1f5cfdf20dee6"
+    "revision": "96a45dc6d366c359f2615330a3acbcad"
   },
   {
     "url": "workbox-config.js",
@@ -57,7 +57,7 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new broadcastUpdate.Plugin(), // use default channel. Otherwise put channel name as param here.
+			  new broadcastUpdate.Plugin('apis-update'), 
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));
