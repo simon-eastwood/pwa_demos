@@ -5,6 +5,7 @@ const {strategies, broadcastUpdate} = workbox;
 
 
 
+
 workbox.precaching.precacheAndRoute([]);
 
 
@@ -17,9 +18,9 @@ self.addEventListener('fetch', (event) => {
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] using SWR');
-		const swr = new strategies.strategies.StaleWhileRevalidate({
+		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new workbox.broadcastUpdate.Plugin({
+			  new broadcastUpdate.Plugin({
 				channelName: 'api-updates',
 			  }),
 			],
