@@ -17,7 +17,7 @@ self.addEventListener('fetch', (event) => {
 	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
-	if (event.request.url.endsWith('/.test')) {
+	if (event.request.url.endsWith('.test')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
