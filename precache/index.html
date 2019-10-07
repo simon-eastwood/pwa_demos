@@ -19,7 +19,7 @@
 				}
 			});
 
-			const updatesChannel = new BroadcastChannel('apis-update')
+			const updatesChannel = new BroadcastChannel('api-updates')
 				updatesChannel.addEventListener('message', event => {
 				console.log('here', event)  
 				if (event.data.type === 'CACHE_UPDATED') {

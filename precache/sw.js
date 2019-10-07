@@ -18,10 +18,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "ef0a59bd6c4430a098eea37a93b5cf9a"
   },
   {
-    "url": "index.html",
-    "revision": "47a9575c04d2950e14ccf6f47f249ea4"
-  },
-  {
     "url": "mypwa.webmanifest",
     "revision": "abec96ef0755a4733219cbebc36aeda6"
   },
@@ -35,7 +31,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "workbox-config.js",
-    "revision": "c513ba9a6a24b652c66e2f146125b6f6"
+    "revision": "1627dc73d8407f1c7c3cdea05c29241c"
   }
 ]);
 
