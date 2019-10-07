@@ -15,7 +15,7 @@ self.addEventListener('fetch', (event) => {
 
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
-		console.log ('[Service worker] usig cache first');
+		console.log ('[Service worker] using cache first');
 		const cacheFirst = new strategies.CacheFirst();
 		event.respondWith(cacheFirst.makeRequest({request: event.request}));
 	} 
