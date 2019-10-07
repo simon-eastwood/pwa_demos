@@ -5,6 +5,7 @@ const {strategies, broadcastUpdate} = workbox;
 
 
 
+
 workbox.precaching.precacheAndRoute([
   {
     "url": "data1.json",
@@ -36,7 +37,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "6dff4f54ecc56398307f71a878799536"
+    "revision": "be5123214258c24143844b37892f0a8e"
   },
   {
     "url": "workbox-config.js",
@@ -54,9 +55,9 @@ self.addEventListener('fetch', (event) => {
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] using SWR');
-		const swr = new strategies.strategies.StaleWhileRevalidate({
+		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new workbox.broadcastUpdate.Plugin({
+			  new broadcastUpdate.Plugin({
 				channelName: 'api-updates',
 			  }),
 			],
