@@ -3,7 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 // This will trigger the importScripts() for workbox.strategies and its dependencies:
 const {strategies, broadcastUpdate} = workbox;
 
-const  broadcastPlugin = new broadcastUpdate.Plugin('apis-update', {headersToCheck: ['etag', 'date']});
+//const  broadcastPlugin = new broadcastUpdate.Plugin('apis-update', {headersToCheck: ['etag']});
 
 
 
@@ -31,7 +31,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "3746585be37b050a4ee9976f348222fe"
+    "revision": "56ba3499a2dcd8183a54b86857edb8f4"
   },
   {
     "url": "workbox-config.js",
@@ -39,9 +39,20 @@ workbox.precaching.precacheAndRoute([
   }
 ]);
 
+workbox.routing.registerRoute(
+	new RegExp('.test'),
+	new workbox.strategies.StaleWhileRevalidate({
+	  plugins: [
+		new workbox.broadcastUpdate.Plugin({
+		  channelName: 'api-updates',
+		}),
+	  ],
+	})
+  );
 
 
-self.addEventListener('fetch', (event) => {
+
+/* self.addEventListener('fetch', (event) => {
 	const requestURL = new URL(event.request.url);
 	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
@@ -59,6 +70,6 @@ self.addEventListener('fetch', (event) => {
 	
 	// else default
 
-});
+}); */
 
 
