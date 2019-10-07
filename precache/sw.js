@@ -26,7 +26,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "f0302ac0c1785f09c68ab32a27479125"
+    "revision": "bde40ebcf9d43d6fa53676356c38ddda"
   },
   {
     "url": "mypwa.webmanifest",
@@ -38,7 +38,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "8bcd1ea4583ceae0d153ec9571393f79"
+    "revision": "42d19348168dd8e525025bd97cbb7d42"
   },
   {
     "url": "workbox-config.js",
@@ -58,7 +58,10 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-				updatePlugin, 
+				new broadcastUpdate.Plugin('apis-update'), 
+				{
+					headersToCheck: ['etag', 'date'],
+				}
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));

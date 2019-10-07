@@ -48,7 +48,7 @@
 				return response.json()
 			}
 
-			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' })
+			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
 				.then(status)
 				.then(json)
 				.then(function (data) {

@@ -21,7 +21,10 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-				updatePlugin, 
+				new broadcastUpdate.Plugin('apis-update'), 
+				{
+					headersToCheck: ['etag', 'date'],
+				}
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));
