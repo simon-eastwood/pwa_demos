@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "df2201e77c75559eb86402f6fb8ac2e5"
+    "revision": "9da86148b019d0128546027059c0b0ad"
   },
   {
     "url": "mypwa.webmanifest",
@@ -35,7 +35,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "8a8eb8f3bb159032335094815d436609"
+    "revision": "2f763e43ffff058c76ce2c96a411a5c8"
   },
   {
     "url": "workbox-config.js",
@@ -52,7 +52,7 @@ self.addEventListener('fetch', (event) => {
 
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
-		console.log ('[Service worker] usig cache first');
+		console.log ('[Service worker] using cache first');
 		const cacheFirst = new strategies.CacheFirst();
 		event.respondWith(cacheFirst.makeRequest({request: event.request}));
 	} 
