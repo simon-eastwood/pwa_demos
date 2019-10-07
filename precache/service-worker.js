@@ -20,9 +20,7 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new broadcastUpdate.Plugin({
-				channelName: 'api-updates',
-			  }),
+			  new broadcastUpdate.Plugin(), // use default channel. Otherwise put channel name as param here.
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));

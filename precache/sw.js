@@ -37,7 +37,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "be5123214258c24143844b37892f0a8e"
+    "revision": "192b464c2fea2d32f9a1f5cfdf20dee6"
   },
   {
     "url": "workbox-config.js",
@@ -57,9 +57,7 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new broadcastUpdate.Plugin({
-				channelName: 'api-updates',
-			  }),
+			  new broadcastUpdate.Plugin(), // use default channel. Otherwise put channel name as param here.
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));
