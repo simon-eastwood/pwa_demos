@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "9da86148b019d0128546027059c0b0ad"
+    "revision": "dc1b610ec601d4719ec7eaec909031e5"
   },
   {
     "url": "mypwa.webmanifest",
