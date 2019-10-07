@@ -35,7 +35,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "2f763e43ffff058c76ce2c96a411a5c8"
+    "revision": "7525338821f60afba0ab35822ce8b8cf"
   },
   {
     "url": "workbox-config.js",
@@ -52,8 +52,8 @@ self.addEventListener('fetch', (event) => {
 
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
-		console.log ('[Service worker] using cache first');
-		const cacheFirst = new strategies.CacheFirst();
+		console.log ('[Service worker] using SWR');
+		const cacheFirst = new strategies.StaleWhileRevalidate();
 		event.respondWith(cacheFirst.makeRequest({request: event.request}));
 	} 
 	
