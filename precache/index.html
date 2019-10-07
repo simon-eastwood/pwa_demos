@@ -19,13 +19,15 @@
 				}
 			});
 
-			wb.addEventListener('message', (event) => {
+			const updatesChannel = new BroadcastChannel('apis-update')
+				updatesChannel.addEventListener('message', event => {
+				console.log('here', event)  
 				if (event.data.type === 'CACHE_UPDATED') {
 					const { updatedURL } = event.data.payload;
 
 					console.log(`A newer version of ${updatedURL} is available!`);
 				}
-			});
+			})
 
 			wb.register();
 		}
