@@ -60,7 +60,9 @@
 					document.getElementById("output").innerHTML = error;
 				}); */
 
-			 			fetch('https://raw.githubusercontent.com/simon-eastwood/pwa_demos/master/precache/api/data3.test', { mode: 'same-origin' })
+						 fetch('https://raw.githubusercontent.com/simon-eastwood/pwa_demos/master/precache/api/data3.test', 
+								 { cache: 'no-cache', // only applies to browser cache
+								 mode: 'same-origin' })
 							.then(status)
 							.then(json)
 							.then(function (data) {
