@@ -1,7 +1,8 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 // This will trigger the importScripts() for workbox.strategies and its dependencies:
-const {strategies} = workbox;
+const {strategies, broadcastUpdate} = workbox;
+
 
 
 workbox.precaching.precacheAndRoute([]);
@@ -16,8 +17,14 @@ self.addEventListener('fetch', (event) => {
 	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] using SWR');
-		const cacheFirst = new strategies.StaleWhileRevalidate();
-		event.respondWith(cacheFirst.makeRequest({request: event.request}));
+		const swr = new strategies.strategies.StaleWhileRevalidate({
+			plugins: [
+			  new workbox.broadcastUpdate.Plugin({
+				channelName: 'api-updates',
+			  }),
+			],
+		  });
+		event.respondWith(swr.makeRequest({request: event.request}));
 	} 
 	
 	// else default
