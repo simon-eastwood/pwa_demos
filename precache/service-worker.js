@@ -13,7 +13,7 @@ self.addEventListener('fetch', (event) => {
 	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
-	if (event.request.url.endsWith('.json')) {
+	if (event.request.url.endsWith('/all')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] usig cache first');
 		const cacheFirst = new strategies.CacheFirst();
