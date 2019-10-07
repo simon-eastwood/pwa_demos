@@ -2,20 +2,33 @@
 
 <head>
 	<link rel="manifest" href="mypwa.webmanifest">
-	<script defer>
+	<script type="module">
+		import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
+
 		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function () {
-				navigator.serviceWorker.register('./sw.js').then(function (registration) {
-					// Registration was successful
-					console.log('ServiceWorker registration successful with scope: ', registration.scope);
-				}, function (err) {
-					// registration failed :(
-					console.log('ServiceWorker registration failed: ', err);
-				});
+			const wb = new Workbox('/sw.js');
+
+			wb.addEventListener('activated', (event) => {
+				// `event.isUpdate` will be true if another version of the service
+				// worker was controlling the page when this version was registered.
+				if (!event.isUpdate) {
+					console.log('Service worker activated for the first time!');
+
+					// If your service worker is configured to precache assets, those
+					// assets should all be available now.
+				}
 			});
+
+			wb.addEventListener('message', (event) => {
+				if (event.data.type === 'CACHE_UPDATED') {
+					const { updatedURL } = event.data.payload;
+
+					console.log(`A newer version of ${updatedURL} is available!`);
+				}
+			});
+
+			wb.register();
 		}
-
-
 	</script>
 	<script>
 		function loadData() {
@@ -45,17 +58,17 @@
 					document.getElementById("output").innerHTML = error;
 				});
 
-/* 			fetch('./data1.json', { mode: 'cors' })
-				.then(status)
-				.then(json)
-				.then(function (data) {
-					console.log('data 1 Request succeeded with JSON response', data);
-					document.getElementById("output").innerHTML = JSON.stringify(data);
-					document.getElementById("time").innerHTML = data['time'];
-				}).catch(function (error) {
-					console.log('data 1 Request failed', error);
-					document.getElementById("output").innerHTML = error;
-				}); */
+			/* 			fetch('./data1.json', { mode: 'cors' })
+							.then(status)
+							.then(json)
+							.then(function (data) {
+								console.log('data 1 Request succeeded with JSON response', data);
+								document.getElementById("output").innerHTML = JSON.stringify(data);
+								document.getElementById("time").innerHTML = data['time'];
+							}).catch(function (error) {
+								console.log('data 1 Request failed', error);
+								document.getElementById("output").innerHTML = error;
+							}); */
 
 		}
 
