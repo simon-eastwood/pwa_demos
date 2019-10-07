@@ -3,6 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 // This will trigger the importScripts() for workbox.strategies and its dependencies:
 const {strategies, broadcastUpdate} = workbox;
 
+const  updatePlugin = new broadcastUpdate.Plugin('apis-update');
 
 
 
@@ -20,7 +21,7 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-			  new broadcastUpdate.Plugin('apis-update'), 
+				updatePlugin, 
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));
