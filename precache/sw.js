@@ -10,14 +10,6 @@ const  broadcastPlugin = new broadcastUpdate.Plugin('apis-update', {headersToChe
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "data1.json",
-    "revision": "cf5dd75f675c611b49513e96db7da835"
-  },
-  {
-    "url": "data2.json",
-    "revision": "cf5dd75f675c611b49513e96db7da835"
-  },
-  {
     "url": "icon-192.png",
     "revision": "50f4c945d4e4eb01e400d8c2304c98af"
   },
@@ -27,7 +19,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "bde40ebcf9d43d6fa53676356c38ddda"
+    "revision": "5c21fed6a9f6fa27edead03eff5ac42b"
   },
   {
     "url": "mypwa.webmanifest",
@@ -39,7 +31,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "1f9881864aeddc5b35cb88eab03aad31"
+    "revision": "d6edb08c725bc1c41d29366718551a21"
   },
   {
     "url": "workbox-config.js",
@@ -54,7 +46,7 @@ self.addEventListener('fetch', (event) => {
 	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
-	if (event.request.url.endsWith('/all')) {
+	if (event.request.url.endsWith('/.test')) {
 		// Using the previously-initialized strategies will work as expected.
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({

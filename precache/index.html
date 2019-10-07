@@ -48,7 +48,7 @@
 				return response.json()
 			}
 
-			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
+/* 			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
 				.then(status)
 				.then(json)
 				.then(function (data) {
@@ -58,9 +58,9 @@
 				}).catch(function (error) {
 					console.log('Request failed', error);
 					document.getElementById("output").innerHTML = error;
-				});
+				}); */
 
-			/* 			fetch('./data1.json', { mode: 'cors' })
+			 			fetch('./api/data1.test', { mode: 'same-origin' })
 							.then(status)
 							.then(json)
 							.then(function (data) {
@@ -70,7 +70,7 @@
 							}).catch(function (error) {
 								console.log('data 1 Request failed', error);
 								document.getElementById("output").innerHTML = error;
-							}); */
+							}); 
 
 		}
 
