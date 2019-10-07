@@ -3,7 +3,8 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 // This will trigger the importScripts() for workbox.strategies and its dependencies:
 const {strategies, broadcastUpdate} = workbox;
 
-const  updatePlugin = new broadcastUpdate.Plugin('apis-update');
+const  broadcastPlugin = new broadcastUpdate.Plugin('apis-update', {headersToCheck: ['etag', 'date']});
+
 
 
 
@@ -38,7 +39,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "42d19348168dd8e525025bd97cbb7d42"
+    "revision": "1f9881864aeddc5b35cb88eab03aad31"
   },
   {
     "url": "workbox-config.js",
@@ -58,10 +59,7 @@ self.addEventListener('fetch', (event) => {
 		console.log ('[Service worker] using SWR');
 		const swr = new strategies.StaleWhileRevalidate({
 			plugins: [
-				new broadcastUpdate.Plugin('apis-update'), 
-				{
-					headersToCheck: ['etag', 'date'],
-				}
+				broadcastPlugin 
 			],
 		  });
 		event.respondWith(swr.makeRequest({request: event.request}));
