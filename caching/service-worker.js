@@ -6,7 +6,7 @@ const {strategies, broadcastUpdate} = workbox;
 workbox.precaching.precacheAndRoute([]);
 
 workbox.routing.registerRoute(
-	new RegExp('index.html|\/precache\/$'),
+	new RegExp('index.html|\/dist\/$'),
 	new strategies.NetworkFirst()  // always try to read index.html from backed. Fallback to cache if offline
 );
 
