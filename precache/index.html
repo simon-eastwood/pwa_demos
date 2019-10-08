@@ -5,12 +5,12 @@
 	<script type="module">
 		import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
 
-		async function handleCacheUpdate(cacheName, updatedUrl) {
+		async function handleCacheUpdate(cacheName, updatedURL) {
 					// Do something with cacheName and updatedUrl.
 					// For example, get the cached content and update
 					// the content on the page.
 					const cache = await  caches.open(cacheName);
-					const updatedResponse = await cache.match(updatedUrl);
+					const updatedResponse = await cache.match(updatedURL);
 					const updatedJson = await updatedResponse.text();
 					document.getElementById('slow-output2').innerHTML = JSON.stringify(updatedJson);
 		}
@@ -33,10 +33,10 @@
 			updatesChannel.addEventListener('message', event => {
 				console.log('here', event)
 				if (event.data.type === 'CACHE_UPDATED') {
-					const { cacheName, updatedUrl } = event.data.payload;
+					const { cacheName, updatedURL } = event.data.payload;
 					console.log(`A newer version of ${updatedURL} is available!`);
 
-					handleCacheUpdate (cacheName, updatedUrl);
+					handleCacheUpdate (cacheName, updatedURL);
 				}
 			})
 
