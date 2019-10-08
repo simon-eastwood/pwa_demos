@@ -18,13 +18,18 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "7e801bd4b0d5eb9b94a5b5c88680a87a"
+    "revision": "8818a43e7052951aedcfddf7c0db55c8"
   },
   {
     "url": "workbox-config.js",
     "revision": "a70f033f761f0ec07fa28e9f3f6a6ba2"
   }
 ]);
+
+workbox.routing.registerRoute(
+	new RegExp('index.html'),
+	new strategies.NetworkFirst()
+);
 
 workbox.routing.registerRoute(
 	new RegExp('slow'),

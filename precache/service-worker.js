@@ -6,6 +6,11 @@ const {strategies, broadcastUpdate} = workbox;
 workbox.precaching.precacheAndRoute([]);
 
 workbox.routing.registerRoute(
+	new RegExp('index.html'),
+	new strategies.NetworkFirst()
+);
+
+workbox.routing.registerRoute(
 	new RegExp('slow'),
 	new strategies.StaleWhileRevalidate({
 	  plugins: [

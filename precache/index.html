@@ -12,7 +12,7 @@
 					const cache = await  caches.open(cacheName);
 					const updatedResponse = await cache.match(updatedURL);
 					const updatedJson = await updatedResponse.text();
-					document.getElementById('slow-output2').innerHTML = JSON.stringify(updatedJson);
+					document.getElementById('slow-output2').innerHTML = updatedJson;
 		}
 
 		if ('serviceWorker' in navigator) {
