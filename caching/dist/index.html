@@ -6,8 +6,7 @@
 		import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
 
 		async function handleCacheUpdate(cacheName, updatedURL) {
-					// Do something with cacheName and updatedUrl.
-					// For example, get the cached content and update
+					// Get the cached content and update
 					// the content on the page.
 					const cache = await  caches.open(cacheName);
 					const updatedResponse = await cache.match(updatedURL);
@@ -31,11 +30,10 @@
 
 			const updatesChannel = new BroadcastChannel('api-updates')
 			updatesChannel.addEventListener('message', event => {
-				console.log('here', event)
+				console.log(event)
 				if (event.data.type === 'CACHE_UPDATED') {
 					const { cacheName, updatedURL } = event.data.payload;
 					console.log(`A newer version of ${updatedURL} is available!`);
-
 					handleCacheUpdate (cacheName, updatedURL);
 				}
 			})
@@ -45,8 +43,7 @@
 	</script>
 	<script>
 		function loadData() {
-			console.log("Loaded");
-
+		
 			function status(response) {
 				if (response.status >= 200 && response.status < 300) {
 					return Promise.resolve(response)
@@ -59,17 +56,6 @@
 				return response.json()
 			}
 
-			/* 			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
-							.then(status)
-							.then(json)
-							.then(function (data) {
-								console.log('Request succeeded with JSON response', data);
-								document.getElementById("output").innerHTML = JSON.stringify(data);
-								document.getElementById("time").innerHTML = data['time'];
-							}).catch(function (error) {
-								console.log('Request failed', error);
-								document.getElementById("output").innerHTML = error;
-							}); */
 			function callApi(url, domIdForResult) {
 				fetch(url,
 					{
@@ -87,6 +73,7 @@
 						document.getElementById(domIdForResult).innerHTML = error;
 					});
 			}
+			
 			callApi('./api/slow/data.json', 'slow-output1');
 			callApi('./api/fast/data.json', 'fast-output');
 

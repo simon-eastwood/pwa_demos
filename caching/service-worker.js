@@ -7,16 +7,16 @@ workbox.precaching.precacheAndRoute([]);
 
 workbox.routing.registerRoute(
 	new RegExp('index.html|\/precache\/$'),
-	new strategies.NetworkFirst()
+	new strategies.NetworkFirst()  // always try to read index.html from backed. Fallback to cache if offline
 );
 
 workbox.routing.registerRoute(
 	new RegExp('slow'),
-	new strategies.StaleWhileRevalidate({
+	new strategies.StaleWhileRevalidate({ // These API calls read from cache and update from the network later
 	  plugins: [
 		new broadcastUpdate.Plugin({
 		  channelName: 'api-updates',
-		  headersToCheck: ['etag']
+		  headersToCheck: ['etag']  // if the network call returns a version with different eTag, inform the client windows
 		}),
 	  ],
 	})
@@ -24,16 +24,8 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
 	new RegExp('fast'),
-	new strategies.NetworkFirst()
+	new strategies.NetworkFirst()  // These API calls call the network first with fallback to cache if offline
 );
-
-workbox.routing.setCatchHandler(({event}) => {
-		// If we don't have a fallback, just return an error response.
-		console.log ("error " + event);
-		const channel = new BroadcastChannel('sw-errors');
-		channel.postMessage({event: event});
-		return Response.error();
-  });
 
 
 

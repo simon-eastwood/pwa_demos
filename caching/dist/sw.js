@@ -15,29 +15,21 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "mypwa.webmanifest",
     "revision": "abec96ef0755a4733219cbebc36aeda6"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "4390b15bff03b931ea64aa106bc841f6"
-  },
-  {
-    "url": "workbox-config.js",
-    "revision": "a70f033f761f0ec07fa28e9f3f6a6ba2"
   }
 ]);
 
 workbox.routing.registerRoute(
 	new RegExp('index.html|\/precache\/$'),
-	new strategies.NetworkFirst()
+	new strategies.NetworkFirst()  // always try to read index.html from backed. Fallback to cache if offline
 );
 
 workbox.routing.registerRoute(
 	new RegExp('slow'),
-	new strategies.StaleWhileRevalidate({
+	new strategies.StaleWhileRevalidate({ // These API calls read from cache and update from the network later
 	  plugins: [
 		new broadcastUpdate.Plugin({
 		  channelName: 'api-updates',
-		  headersToCheck: ['etag']
+		  headersToCheck: ['etag']  // if the network call returns a version with different eTag, inform the client windows
 		}),
 	  ],
 	})
@@ -45,16 +37,8 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
 	new RegExp('fast'),
-	new strategies.NetworkFirst()
+	new strategies.NetworkFirst()  // These API calls call the network first with fallback to cache if offline
 );
-
-workbox.routing.setCatchHandler(({event}) => {
-		// If we don't have a fallback, just return an error response.
-		console.log ("error " + event);
-		const channel = new BroadcastChannel('sw-errors');
-		channel.postMessage({event: event});
-		return Response.error();
-  });
 
 
 
