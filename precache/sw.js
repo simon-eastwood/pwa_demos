@@ -18,7 +18,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "8818a43e7052951aedcfddf7c0db55c8"
+    "revision": "3a3dfc6e29fcd1e142363c9990ed936e"
   },
   {
     "url": "workbox-config.js",
@@ -27,7 +27,7 @@ workbox.precaching.precacheAndRoute([
 ]);
 
 workbox.routing.registerRoute(
-	new RegExp('index.html'),
+	new RegExp('index.html|\/precache\/$'),
 	new strategies.NetworkFirst()
 );
 
@@ -37,6 +37,7 @@ workbox.routing.registerRoute(
 	  plugins: [
 		new broadcastUpdate.Plugin({
 		  channelName: 'api-updates',
+		  headersToCheck: ['etag']
 		}),
 	  ],
 	})

@@ -6,7 +6,7 @@ const {strategies, broadcastUpdate} = workbox;
 workbox.precaching.precacheAndRoute([]);
 
 workbox.routing.registerRoute(
-	new RegExp('index.html'),
+	new RegExp('index.html|\/precache\/$'),
 	new strategies.NetworkFirst()
 );
 
@@ -16,6 +16,7 @@ workbox.routing.registerRoute(
 	  plugins: [
 		new broadcastUpdate.Plugin({
 		  channelName: 'api-updates',
+		  headersToCheck: ['etag']
 		}),
 	  ],
 	})
