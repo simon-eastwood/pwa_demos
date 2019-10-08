@@ -5,14 +5,6 @@ const {strategies, broadcastUpdate} = workbox;
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "api/fast/data.json",
-    "revision": "dfb9863dfc3cabeef9ab6b08a99c29d3"
-  },
-  {
-    "url": "api/slow/data.json",
-    "revision": "3f4547a781d4f36ec277e1ae78b71cc4"
-  },
-  {
     "url": "icon-192.png",
     "revision": "50f4c945d4e4eb01e400d8c2304c98af"
   },
@@ -30,7 +22,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "workbox-config.js",
-    "revision": "82b3eea5b8d73696d3507d79674aab80"
+    "revision": "a70f033f761f0ec07fa28e9f3f6a6ba2"
   }
 ]);
 
