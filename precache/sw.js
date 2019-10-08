@@ -18,7 +18,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "service-worker.js",
-    "revision": "3a3dfc6e29fcd1e142363c9990ed936e"
+    "revision": "4390b15bff03b931ea64aa106bc841f6"
   },
   {
     "url": "workbox-config.js",
@@ -48,6 +48,13 @@ workbox.routing.registerRoute(
 	new strategies.NetworkFirst()
 );
 
+workbox.routing.setCatchHandler(({event}) => {
+		// If we don't have a fallback, just return an error response.
+		console.log ("error " + event);
+		const channel = new BroadcastChannel('sw-errors');
+		channel.postMessage({event: event});
+		return Response.error();
+  });
 
 
 

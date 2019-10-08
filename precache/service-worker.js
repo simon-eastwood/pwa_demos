@@ -27,6 +27,13 @@ workbox.routing.registerRoute(
 	new strategies.NetworkFirst()
 );
 
+workbox.routing.setCatchHandler(({event}) => {
+		// If we don't have a fallback, just return an error response.
+		console.log ("error " + event);
+		const channel = new BroadcastChannel('sw-errors');
+		channel.postMessage({event: event});
+		return Response.error();
+  });
 
 
 
