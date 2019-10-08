@@ -3,12 +3,15 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 // This will trigger the importScripts() for workbox.strategies and its dependencies:
 const {strategies, broadcastUpdate} = workbox;
 
-//const  broadcastPlugin = new broadcastUpdate.Plugin('apis-update', {headersToCheck: ['etag']});
-
-
-
-
 workbox.precaching.precacheAndRoute([
+  {
+    "url": "api/fast/data.json",
+    "revision": "dfb9863dfc3cabeef9ab6b08a99c29d3"
+  },
+  {
+    "url": "api/slow/data.json",
+    "revision": "3f4547a781d4f36ec277e1ae78b71cc4"
+  },
   {
     "url": "icon-192.png",
     "revision": "50f4c945d4e4eb01e400d8c2304c98af"
@@ -22,50 +25,33 @@ workbox.precaching.precacheAndRoute([
     "revision": "abec96ef0755a4733219cbebc36aeda6"
   },
   {
-    "url": "oldsw.js",
-    "revision": "54dbab1703a25e13c18c81bab5089577"
-  },
-  {
     "url": "service-worker.js",
-    "revision": "56ba3499a2dcd8183a54b86857edb8f4"
+    "revision": "7e801bd4b0d5eb9b94a5b5c88680a87a"
   },
   {
     "url": "workbox-config.js",
-    "revision": "1627dc73d8407f1c7c3cdea05c29241c"
+    "revision": "82b3eea5b8d73696d3507d79674aab80"
   }
 ]);
 
 workbox.routing.registerRoute(
-	new RegExp('.test'),
-	new workbox.strategies.StaleWhileRevalidate({
+	new RegExp('slow'),
+	new strategies.StaleWhileRevalidate({
 	  plugins: [
-		new workbox.broadcastUpdate.Plugin({
+		new broadcastUpdate.Plugin({
 		  channelName: 'api-updates',
 		}),
 	  ],
 	})
-  );
+);
+
+workbox.routing.registerRoute(
+	new RegExp('fast'),
+	new strategies.NetworkFirst()
+);
 
 
 
-/* self.addEventListener('fetch', (event) => {
-	const requestURL = new URL(event.request.url);
-	console.log('[Service Worker] Fetch requested for ' + requestURL.hostname + ':' + requestURL.pathname);
-	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
-	if (event.request.url.endsWith('.test')) {
-		// Using the previously-initialized strategies will work as expected.
-		console.log ('[Service worker] using SWR');
-		const swr = new strategies.StaleWhileRevalidate({
-			plugins: [
-				broadcastPlugin 
-			],
-		  });
-		event.respondWith(swr.makeRequest({request: event.request}));
-	} 
-	
-	// else default
-
-}); */
 
 

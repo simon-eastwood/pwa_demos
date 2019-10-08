@@ -20,12 +20,20 @@
 			});
 
 			const updatesChannel = new BroadcastChannel('api-updates')
-				updatesChannel.addEventListener('message', event => {
-				console.log('here', event)  
+			updatesChannel.addEventListener('message', event => {
+				console.log('here', event)
 				if (event.data.type === 'CACHE_UPDATED') {
-					const { updatedURL } = event.data.payload;
-
+					const { cacheName, updatedUrl } = event.data.payload;
 					console.log(`A newer version of ${updatedURL} is available!`);
+
+
+					// Do something with cacheName and updatedUrl.
+					// For example, get the cached content and update
+					// the content on the page.
+					const cache = await caches.open(cacheName);
+					const updatedResponse = await cache.match(updatedUrl);
+					const updatedJson = await updatedResponse.text();
+					document.getElementById('slow-output2').innerHTML = JSON.stringify(updatedJson);
 				}
 			})
 
@@ -48,31 +56,36 @@
 				return response.json()
 			}
 
-/* 			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
-				.then(status)
-				.then(json)
-				.then(function (data) {
-					console.log('Request succeeded with JSON response', data);
-					document.getElementById("output").innerHTML = JSON.stringify(data);
-					document.getElementById("time").innerHTML = data['time'];
-				}).catch(function (error) {
-					console.log('Request failed', error);
-					document.getElementById("output").innerHTML = error;
-				}); */
-
-						 fetch('./api/data3.test', 
-								 { cache: 'no-cache', // only applies to browser cache
-								 mode: 'same-origin' })
+			/* 			fetch('https://opensky-network.org/api/states/all', { mode: 'cors' , headers: {'Access-Control-Request-Headers':'Date'} })
 							.then(status)
 							.then(json)
 							.then(function (data) {
-								console.log('data 1 Request succeeded with JSON response', data);
+								console.log('Request succeeded with JSON response', data);
 								document.getElementById("output").innerHTML = JSON.stringify(data);
 								document.getElementById("time").innerHTML = data['time'];
 							}).catch(function (error) {
-								console.log('data 1 Request failed', error);
+								console.log('Request failed', error);
 								document.getElementById("output").innerHTML = error;
-							}); 
+							}); */
+			function callApi(url, domIdForResult) {
+				fetch(url,
+					{
+						cache: 'no-cache', // only applies to browser cache
+						mode: 'same-origin'
+					})
+					.then(status)
+					.then(json)
+					.then(function (data) {
+						console.log('Request ' + url + ' succeeded with JSON response', data);
+						document.getElementById(domIdForResult).innerHTML = JSON.stringify(data);
+
+					}).catch(function (error) {
+						console.log('Request ' + url + ' failed', error);
+						document.getElementById(domIdForResult).innerHTML = error;
+					});
+			}
+			callApi('./api/slow/data.json', 'slow-output1');
+			callApi('./api/fast/data.json', 'fast-output');
 
 		}
 
@@ -80,9 +93,11 @@
 </head>
 
 <body onload="loadData()">
-	<h1>Demonstration of preloading files with service worker</h1>
-	Flight Data as of <span id="time"></span><br />
-	<span id="output"></span>
+	<h1>Demonstration of caching with service worker</h1>
+
+	<span id="slow-output1"></span>
+	<span id="slow-output2"></span>
+	<span id="fast-output"></span>
 </body>
 
 </html>
