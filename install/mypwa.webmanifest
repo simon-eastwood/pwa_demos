@@ -1,8 +1,18 @@
 {
     "name": "Demo Install Progressive Web App",
-    "short_name": "installPWA",
+    "short_name": "mydemoPWA",
     "description": "Progressive Web App that shows how to do installation.",
     "icons": [
+        {
+            "src": "logo-180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "logo-120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
         {
             "src": "icon-192.png",
             "sizes": "192x192",
