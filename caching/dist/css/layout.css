@@ -1,0 +1,884 @@
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 0;
+  font-weight: normal;
+}
+
+h2 {
+  margin-top: 20px;
+  border: 0;
+  font-weight: normal;
+}
+
+h3 {
+  margin-top: 20px;
+  border: 0;
+  font-weight: normal;
+}
+
+h4 {
+  margin-top: 20px;
+  border: 0;
+  font-weight: normal;
+}
+
+h5 {
+  margin-top: 20px;
+  border: 0;
+  font-weight: normal;
+}
+
+h6 {
+  margin-top: 20px;
+  border: 0;
+  font-weight: normal;
+}
+
+button,
+.btn, .link-btn {
+  min-width: 52px;
+  margin: 0 16px 0 0;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: var(--epods--space-inset-squish-m);
+  font-family: var(--epods--font-primary-semibold);
+  border: none;
+}
+
+button:hover,
+.btn:hover, .link-btn:hover {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/iconfont/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/iconfont/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/iconfont/MaterialIcons-Regular.woff) format("woff"), url(../fonts/iconfont/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.icon-s {
+  font-size: var(--epods--icon-size-small);
+}
+
+.icon-m {
+  font-size: var(--epods--icon-size-medium);
+}
+
+.icon-l {
+  font-size: var(--epods--icon-size-large);
+}
+
+.icon-xl {
+  font-size: var(--epods--icon-size-x-large);
+}
+
+a {
+  max-width: 420px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--epods--color-btn-link-active);
+  text-decoration: underline;
+}
+
+a:disabled {
+  color: var(--epods--color-link-text-disabled);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--epods--color-link-text-visited);
+  text-decoration: underline;
+}
+
+.message {
+  display: flex;
+  width: auto;
+  min-width: 500px;
+  max-width: 500px;
+  font-family: var(--epods--font-primary-semibold);
+}
+
+.message.success {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-success-background);
+  border: 10px solid var(--epods--color-signal-success-stroke);
+}
+
+.message.success .material-icons {
+  margin: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-success);
+}
+
+.message.success .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-success-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.success2 {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-success-background);
+  border-left: 10px solid var(--epods--color-signal-success-stroke);
+}
+
+.message.success2 .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-success);
+}
+
+.message.success2 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-success-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.success3 {
+  background-color: var(--epods--color-signal-success-background);
+  border-right: 5px solid var(--epods--color-signal-success-stroke);
+}
+
+.message.success3 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-success);
+}
+
+.message.success3 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-success-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.success4 {
+  background-color: var(--epods--color-signal-success-background);
+  border-right: 5px solid var(--epods--color-signal-success-stroke);
+}
+
+.message.success4 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-success-stroke);
+}
+
+.message.success4 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-success-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.warning {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-warning-background);
+  border: 10px solid var(--epods--color-signal-warning-stroke);
+}
+
+.message.warning .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-warning);
+}
+
+.message.warning .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-warning-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.warning2 {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-warning-background);
+  border-left: 10px solid var(--epods--color-signal-warning-stroke);
+}
+
+.message.warning2 .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-warning);
+}
+
+.message.warning2 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-warning-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.warning3 {
+  background-color: var(--epods--color-signal-warning-background);
+  border-right: 5px solid var(--epods--color-signal-warning-stroke);
+}
+
+.message.warning3 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-warning);
+}
+
+.message.warning3 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-warning-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.warning4 {
+  background-color: var(--epods--color-signal-warning-background);
+  border-right: 5px solid var(--epods--color-signal-warning-stroke);
+}
+
+.message.warning4 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-warning-stroke);
+}
+
+.message.warning4 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-warning-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.error {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-error-background);
+  border: 10px solid var(--epods--color-signal-error-stroke);
+}
+
+.message.error .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-error);
+}
+
+.message.error .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-error-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.error2 {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-error-background);
+  border-left: 10px solid var(--epods--color-signal-error-stroke);
+}
+
+.message.error2 .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-error);
+}
+
+.message.error2 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-error-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.error3 {
+  background-color: var(--epods--color-signal-error-background);
+  border-right: 5px solid var(--epods--color-signal-error-stroke);
+}
+
+.message.error3 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-error);
+}
+
+.message.error3 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-error-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.error4 {
+  background-color: var(--epods--color-signal-error-background);
+  border-right: 5px solid var(--epods--color-signal-error-stroke);
+}
+
+.message.error4 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-error-stroke);
+}
+
+.message.error4 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-error-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.info {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-info-background);
+  border: 10px solid var(--epods--color-signal-info-stroke);
+}
+
+.message.info .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-info);
+}
+
+.message.info .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-info-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.info2 {
+  padding: var(--epods--space-inset-m);
+  background-color: var(--epods--color-signal-info-background);
+  border-left: 10px solid var(--epods--color-signal-info-stroke);
+}
+
+.message.info2 .material-icons {
+  padding: var(--epods--space-inline-m);
+  color: var(--epods--color-signal-info);
+}
+
+.message.info2 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-info-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.info3 {
+  background-color: var(--epods--color-signal-info-background);
+  border-right: 5px solid var(--epods--color-signal-info-stroke);
+}
+
+.message.info3 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-info);
+}
+
+.message.info3 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-info-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message.info4 {
+  background-color: var(--epods--color-signal-info-background);
+  border-right: 5px solid var(--epods--color-signal-info-stroke);
+}
+
+.message.info4 .material-icons {
+  padding: var(--epods--space-inset-m);
+  color: var(--epods--color-white);
+  background-color: var(--epods--color-signal-info-stroke);
+}
+
+.message.info4 .tittle {
+  font-family: var(--epods--font-primary-bold);
+  color: var(--epods--color-signal-info-text);
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.message p {
+  font-family: var(--epods--font-primary-semibold);
+}
+
+/* colors */
+.white-color {
+  color: var(--epods--color-white);
+}
+
+.black-color {
+  color: var(--epods--color-black);
+}
+
+.brand-grey-color {
+  color: var(--epods--color-brand-grey);
+}
+
+.brand-blue-color {
+  color: var(--epods--color-brand-blue);
+}
+
+.brand-red-color {
+  color: var(--epods--color-brand-red);
+}
+
+.primary-color {
+  color: var(--epods--color-primary);
+}
+
+.secondary-color {
+  color: var(--epods--color-secondary);
+}
+
+.success-color {
+  color: var(--epods--color-signal-success);
+}
+
+.warning-color {
+  color: var(--epods--color-signal-warning);
+}
+
+.error-color {
+  color: var(--epods--color-signal-error);
+}
+
+.info-signal-color {
+  color: var(--epods--color-signal-info);
+}
+
+.background-success-color {
+  background-color: var(--epods--color-signal-success);
+}
+
+.background-warning-color {
+  background-color: var(--epods--color-signal-warning);
+}
+
+.background-error-color {
+  background-color: var(--epods--color-signal-error);
+}
+
+.background-info-signal-color {
+  background-color: var(--epods--color-signal-info);
+}
+
+.background-success-50-color {
+  background-color: var(--epods--color-signal-success-stroke);
+}
+
+.background-warning-50-color {
+  background-color: var(--epods--color-signal-warning-stroke);
+}
+
+.background-error-50-color {
+  background-color: var(--epods--color-signal-error-stroke);
+}
+
+.background-info-50-color {
+  background-color: var(--epods--color-signal-info-stroke);
+}
+
+/* font sizes */
+.font-size-12 {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.font-size-13 {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+.font-size-14 {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.font-size-15 {
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+
+.font-size-16 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+.font-size-18 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.font-size-20 {
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+.font-size-22 {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+.font-size-24 {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+.font-size-26 {
+  font-size: 26px;
+  font-size: 2.6rem;
+}
+
+.font-size-28 {
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+
+.font-size-30 {
+  font-size: 30px;
+  font-size: 3rem;
+}
+
+.font-size-32 {
+  font-size: 32px;
+  font-size: 3.2rem;
+}
+
+.font-size-34 {
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+
+.font-size-36 {
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+
+.font-size-38 {
+  font-size: 38px;
+  font-size: 3.8rem;
+}
+
+.font-size-40 {
+  font-size: 40px;
+  font-size: 4rem;
+}
+
+.font-size-42 {
+  font-size: 42px;
+  font-size: 4.2rem;
+}
+
+/* spacing */
+/* inset */
+.space-inset-xs {
+  padding: var(--epods--space-inset-xs);
+}
+
+.space-inset-s {
+  padding: var(--epods--space-inset-s);
+}
+
+.space-inset-m {
+  padding: var(--epods--space-inset-m);
+}
+
+.space-inset-l {
+  padding: var(--epods--space-inset-l);
+}
+
+.space-inset-xl {
+  padding: var(--epods--space-inset-xl);
+}
+
+/* inset squish */
+.space-inset-squish-s {
+  padding: var(--epods--space-inset-squish-s);
+}
+
+.space-inset-squish-m {
+  padding: var(--epods--space-inset-squish-m);
+}
+
+.space-inset-squish-l {
+  padding: var(--epods--space-inset-squish-l);
+}
+
+/* inset strech */
+.space-inset-strech-s {
+  padding: var(--epods--space-inset-strech-s);
+}
+
+.space-inset-strech-m {
+  padding: var(--epods--space-inset-strech-m);
+}
+
+/* stack */
+.space-stack-xxs {
+  margin: var(--epods--space-stack-xxs);
+}
+
+.space-stack-xs {
+  margin: var(--epods--space-stack-xs);
+}
+
+.space-stack-s {
+  margin: var(--epods--space-stack-s);
+}
+
+.space-stack-m {
+  margin: var(--epods--space-stack-m);
+}
+
+.space-stack-l {
+  margin: var(--epods--space-stack-l);
+}
+
+.space-stack-xl {
+  margin: var(--epods--space-stack-xl);
+}
+
+/* inline */
+.space-inline-xxs {
+  margin: var(--epods--space-inline-xxs);
+}
+
+.space-inline-xs {
+  margin: var(--epods--space-inline-xs);
+}
+
+.space-inline-s {
+  margin: var(--epods--space-inline-s);
+}
+
+.space-inline-m {
+  margin: var(--epods--space-inline-m);
+}
+
+.space-inline-l {
+  margin: var(--epods--space-inline-l);
+}
+
+.space-inline-xl {
+  margin: var(--epods--space-inset-xl);
+}
+
+/* buttons */
+button.primary-btn,
+.btn.primary-btn {
+  background-color: var(--epods--color-primary);
+  color: var(--epods--color-white);
+}
+
+button.primary-btn:hover,
+.btn.primary-btn:hover {
+  background-color: var(--epods--color-background-btn-primary-hover);
+}
+
+button.primary-btn:active,
+.btn.primary-btn:active {
+  background-color: var(--epods--color-background-btn-primary-active);
+  color: var(--epods--color-white);
+}
+
+button.primary-btn:disabled,
+.btn.primary-btn:disabled {
+  background-color: var(--epods--color-background-btn-primary-disabled);
+  color: var(--epods--color-btn-primary-disabled);
+  cursor: default;
+}
+
+button.secondary-btn,
+.btn.secondary-btn {
+  background-color: var(--epods--color-background-btn-secondary);
+  color: var(--epods--color-primary);
+}
+
+button.secondary-btn:hover,
+.btn.secondary-btn:hover {
+  background-color: var(--epods--color-background-btn-secondary-hover);
+}
+
+button.secondary-btn:active,
+.btn.secondary-btn:active {
+  background-color: var(--epods--color-background-btn-secondary-active);
+  color: var(--epods--color-btn-secondary-active);
+}
+
+button.secondary-btn:disabled,
+.btn.secondary-btn:disabled {
+  background-color: var(--epods--color-background-btn-secondary-disabled);
+  color: var(--epods--color-btn-secondary-disabled);
+  cursor: default;
+}
+
+button.link-btn,
+.btn.link-btn {
+  background-color: transparent;
+  color: var(--epods--color-primary);
+}
+
+button.link-btn:hover,
+.btn.link-btn:hover {
+  color: var(--epods--color-btn-link-hover);
+  text-decoration: underline;
+}
+
+button.link-btn:active,
+.btn.link-btn:active {
+  color: var(--epods--color-btn-link-active);
+  text-decoration: underline;
+}
+
+button.link-btn:disabled,
+.btn.link-btn:disabled {
+  cursor: default;
+  color: var(--epods--color-btn-link-disabled);
+  text-decoration: none;
+}
+
+button.small,
+.btn.small {
+  min-width: 49px;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+button.large,
+.btn.large {
+  min-width: 54px;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+button.icon,
+.btn.icon {
+  min-width: 36px;
+  padding: 8px;
+  font-size: 0px;
+  font-size: 0rem;
+}
+
+button.icon i:before,
+.btn.icon i:before {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+button.icon.small,
+.btn.icon.small {
+  min-width: 30px;
+}
+
+button.icon.small i:before,
+.btn.icon.small i:before {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+button.icon.large,
+.btn.icon.large {
+  min-width: 44px;
+}
+
+button.icon.large i:before,
+.btn.icon.large i:before {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+button.icon-text-prefix, button.icon-text-suffix,
+.btn.icon-text-prefix,
+.btn.icon-text-suffix {
+  padding: 6px 16px;
+}
+
+button.icon-text-prefix .material-icons,
+.btn.icon-text-prefix .material-icons {
+  margin: 0 4px 0 0;
+}
+
+button.icon-text-suffix .material-icons,
+.btn.icon-text-suffix .material-icons {
+  margin: 0 0 0 4px;
+}
+
+.link-btn.small {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.link-btn.large {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.link-btn.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: var(--epods--color-link-text-disabled);
+}
+
+.link-btn:visited {
+  color: var(--epods--color-link-text-visited);
+}
+
+.card {
+  background: #f9fafb;
+  max-width: 400px;
+}
+
+.pills {
+  width: 100%;
+  float: left;
+}
+
+.pill {
+  display: inline-block;
+  color: var(--epods--color-pill);
+  background-color: var(--epods--color-background-pill);
+  font-family: var(--epods--font-primary-semibold);
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 18px;
+  line-height: 1.8rem;
+}

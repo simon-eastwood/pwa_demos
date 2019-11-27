@@ -15,7 +15,31 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "mypwa.webmanifest",
     "revision": "abec96ef0755a4733219cbebc36aeda6"
-  }
+  }, 
+  {
+    "url": "./css/theme-corporate.css"
+  }, 
+  {
+    "url": "./css/layout.css"
+  }, 
+  {
+    "url": "./css/grid.css"
+  }, 
+  {
+    "url": "./css/responsive.css"
+  }, 
+  {
+    "url": "./css/materialdesignicons.css"
+  }, 
+  {
+    "url": "./fonts/Open_Sans/bold.woff2"
+  }, 
+  {
+    "url": "./fonts/Open_Sans/regular.woff2"
+  }, 
+  {
+    "url": "https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs"
+  }, 
 ]);
 
 workbox.routing.registerRoute(

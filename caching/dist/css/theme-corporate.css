@@ -1,0 +1,373 @@
+:root {
+  --epods--color-white: #FFF;
+  --epods--color-black: #000;
+  /* */
+  /* Grays */
+  /* ------------------------- */
+  /* --epods--gray-darker: lighten(#000, 13.5%); /* #222 */
+  /* --epods--gray-dark: lighten(#000, 20%); /* #333 */
+  /* --epods--gray: lighten(#000, 33.5%); /* #555 */
+  /* --epods--gray-light: lighten(#000, 60%); /* #999 */
+  /* --epods--gray-lighter: lighten(#000, 93.5%); /* #eee */
+  /* --epods--grey-dark: #191919; */
+  /* --epods--grey-light: #f8f8f8; */
+  /* --epods--grey-light-footer: #d7d7d7; */
+  /* */
+  /* Corporate colors */
+  /* ------------------------- */
+  --epods--color-brand-red: #BE0F05;
+  --epods--color-brand-grey: #404955;
+  --epods--color-brand-blue: #5E7C8F;
+  --epods--color-primary: #066AE3;
+  --epods--color-secondary: #DFE5E9;
+  /* */
+  /* Button colors */
+  /* ------------------------- */
+  --epods--color-background-btn-primary-hover: #4991EA;
+  --epods--color-background-btn-primary-active: #084FA6;
+  --epods--color-btn-primary-disabled: #9BBDE7;
+  --epods--color-background-btn-primary-disabled: #E7F1FC;
+  --epods--color-background-btn-secondary: #F2F4F6;
+  --epods--color-background-btn-secondary-hover: #E6ECEE;
+  --epods--color-background-btn-secondary-active: #AEC3D0;
+  --epods--color-btn-secondary-active: #084FA6;
+  --epods--color-btn-secondary-disabled: #9BBDE7;
+  --epods--color-background-btn-secondary-disabled: #F3F5F7;
+  --epods--color-btn-link-hover: #084FA6;
+  --epods--color-btn-link-active: #063A7C;
+  --epods--color-btn-link-disabled: #A5C9F4;
+  --epods--color-link-text-disabled: #A5C9F4;
+  --epods--color-link-text-visited: #8652AF;
+  /* */
+  /* Signal colors */
+  /* ------------------------- */
+  --epods--color-signal-success: #3E9006;
+  --epods--color-signal-success-stroke: rgba(62, 144, 6, 0.5);
+  --epods--color-signal-success-background: rgba(62, 144, 6, 0.1);
+  --epods--color-signal-success-text: #317404;
+  --epods--color-signal-warning: #FFBA00;
+  --epods--color-signal-warning-stroke: rgba(255, 186, 0, 0.5);
+  --epods--color-signal-warning-background: rgba(255, 186, 0, 0.1);
+  --epods--color-signal-warning-text: #84630B;
+  --epods--color-signal-error: #DD654B;
+  --epods--color-signal-error-stroke: rgba(221, 101, 75, 0.5);
+  --epods--color-signal-error-background: rgba(221, 101, 75, 0.1);
+  --epods--color-signal-error-text: #C1381A;
+  --epods--color-signal-info: #71A9EF;
+  --epods--color-signal-info-stroke: rgba(113, 169, 239, 0.5);
+  --epods--color-signal-info-background: rgba(113, 169, 239, 0.1);
+  --epods--color-signal-info-text: #4473AC;
+  /* */
+  /* Link color */
+  /* ------------------------- */
+  --epods--color-link: #066AE3;
+  /* */
+  /* Focus color */
+  /* ------------------------- */
+  --epods--color-focus: #00D3FF;
+  /* */
+  /* Pill colorS */
+  /* ------------------------- */
+  --epods--color-pill: #5E7C8F;
+  --epods--color-background-pill: #DCDFE2;
+  /* */
+  /* Font Family Primary - Corporate theme */
+  /* ------------------------- */
+  --epods--font-primary: 'opensans-regular';
+  --epods--font-primary-semibold: 'opensans-semibold';
+  --epods--font-primary-bold: 'opensans-bold';
+  /* */
+  /* Font Family Secondary - Neutral theme */
+  /* ------------------------- */
+  --epods--font-secondary: 'sourcesanspro-regular';
+  --epods--font-secondary-semibold: 'sourcesanspro-semibold';
+  --epods--font-secondary-bold: 'sourcesanspro-bold';
+  /* */
+  /* Spacing - Inset square */
+  /* ------------------------- */
+  --epods--space-inset-base-xxs: 2px;
+  --epods--space-inset-base-xs: 4px;
+  --epods--space-inset-base-s: 8px;
+  --epods--space-inset-base-m: 16px;
+  --epods--space-inset-base-l: 32px;
+  --epods--space-inset-base-xl: 64px;
+  /* */
+  /* Spacing - Inset squish */
+  /* ------------------------- */
+  --epods--space-inset-squish-base-st: 4px;
+  --epods--space-inset-squish-base-sl: 8px;
+  --epods--space-inset-squish-base-mt: 8px;
+  --epods--space-inset-squish-base-ml: 16px;
+  --epods--space-inset-squish-base-lt: 16px;
+  --epods--space-inset-squish-base-ll: 32px;
+  /* */
+  /* Spacing - Inset strech */
+  /* ------------------------- */
+  --epods--space-inset-strech-st: 12px;
+  --epods--space-inset-strech-sl: 8px;
+  --epods--space-inset-strech-mt: 24px;
+  --epods--space-inset-strech-ml: 16px;
+  /* */
+  /* Spacing - Stack */
+  /* ------------------------- */
+  --epods--space-stack-xxs: 0 0 2px 0;
+  --epods--space-stack-xs: 0 0 4px 0;
+  --epods--space-stack-s: 0 0 8px 0;
+  --epods--space-stack-m: 0 0 16px 0;
+  --epods--space-stack-l: 0 0 32px 0;
+  --epods--space-stack-xl: 0 0 64px 0;
+  /* */
+  /* Spacing - Inline */
+  /* ------------------------- */
+  --epods--space-inline-xxs: 0 2px 0 0;
+  --epods--space-inline-xs: 0 4px 0 0;
+  --epods--space-inline-s: 0 8px 0 0;
+  --epods--space-inline-m: 0 16px 0 0;
+  --epods--space-inline-l: 0 32px 0 0;
+  --epods--space-inline-xl: 0 64px 0 0;
+  /* */
+  /* Icon sizes */
+  /* ------------------------- */
+  --epods--icon-size-small: 20px;
+  --epods--icon-size-medium: 24px;
+  --epods--icon-size-large: 36px;
+  --epods--icon-size-x-large: 48px;
+  /**/
+  /* Responsive break points*/
+  /* -------------------------*/
+  --epods--smartphone-xs: 375px;
+  --epods--smartphone-plus-xm: 414px;
+  --epods--tablet-portrait-md: 768px;
+  --epods--tablet-landscape-lg-min: 960px;
+  --epods--tablet-landscape-lg-max: 1279px;
+  --epods--epo-laptop-small-xl-min: 1280px;
+  --epods--epo-laptop-small-xl-max: 1599px;
+  --epods--epo-laptop-xl2-min: 1600px;
+  --epods--epo-laptop-xl2-max: 1920px;
+  --epods--epo-desktop-2017-xxl-min: 1921px;
+  --epods--epo-desktop-2017-xxl-max: 2560px;
+  --epods--ultrawide-4k-xxxl: 3840px;
+  --epods--super-ultrawide-5k-xxxl2: 5120px;
+}
+
+/* @media only screen and (min-width: 1280px) and (max-width: 1599px)*/
+@media only screen and (min-width: 375px) and (max-width: 1599px) {
+  :root {
+    /* */
+    /* Spacing - Inset square */
+    /* ------------------------- */
+    --epods--space-inset-xs: calc(var(--epods--space-inset-base-xs) * 0.875);
+    --epods--space-inset-s: calc(var(--epods--space-inset-base-s) * 0.875);
+    --epods--space-inset-m: calc(var(--epods--space-inset-base-m) * 0.875);
+    --epods--space-inset-l: calc(var(--epods--space-inset-base-l) * 0.875);
+    --epods--space-inset-xl: calc(var(--epods--space-inset-base-xl) * 0.875);
+    /* */
+    /* Spacing - Inset squish */
+    /* ------------------------- */
+    --epods--space-inset-squish-s: calc(var(--epods--space-inset-squish-base-st) * 0.825) calc(var(--epods--space-inset-squish-base-sl) * 0.825);
+    --epods--space-inset-squish-m: calc(var(--epods--space-inset-squish-base-mt) * 0.825) calc(var(--epods--space-inset-squish-base-ml) * 0.825);
+    --epods--space-inset-squish-l: calc(var(--epods--space-inset-squish-base-lt) * 0.825) calc(var(--epods--space-inset-squish-base-ll) * 0.825);
+    /* */
+    /* Spacing - Inset strech */
+    /* ------------------------- */
+    --epods--space-inset-strech-s: calc(var(--epods--space-inset-strech-st) * 0.825) calc(var(--epods--space-inset-strech-sl) * 0.825);
+    --epods--space-inset-strech-m: calc(var(--epods--space-inset-strech-mt) * 0.825) calc(var(--epods--space-inset-strech-ml) * 0.825);
+    /* */
+    /* Spacing - Stack */
+    /* ------------------------- */
+    --epods--space-stack-xxs: 0 0 calc(var(--epods--space-inset-base-xxs) * 0.825) 0;
+    --epods--space-stack-xs: 0 0 calc(var(--epods--space-inset-base-xs) * 0.825) 0;
+    --epods--space-stack-s: 0 0 calc(var(--epods--space-inset-base-s) * 0.825) 0;
+    --epods--space-stack-m: 0 0 calc(var(--epods--space-inset-base-m) * 0.825) 0;
+    --epods--space-stack-l: 0 0 calc(var(--epods--space-inset-base-l) * 0.825) 0;
+    --epods--space-stack-xl: 0 0 calc(var(--epods--space-inset-base-xl) * 0.825) 0;
+    /* */
+    /* Spacing - Inline */
+    /* ------------------------- */
+    --epods--space-inline-xxs: 0 calc(var(--epods--space-inset-base-xxs) * 0.825) 0 0;
+    --epods--space-inline-xs: 0 calc(var(--epods--space-inset-base-xs) * 0.825) 0 0;
+    --epods--space-inline-s: 0 calc(var(--epods--space-inset-base-s) * 0.825) 0 0;
+    --epods--space-inline-m: 0 calc(var(--epods--space-inset-base-m) * 0.825) 0 0;
+    --epods--space-inline-l: 0 calc(var(--epods--space-inset-base-l) * 0.825) 0 0;
+    --epods--space-inline-xl: 0 calc(var(--epods--space-inset-base-xl) * 0.825) 0 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+  :root {
+    /* */
+    /* Spacing - Inset square */
+    /* ------------------------- */
+    --epods--space-inset-xs: var(--epods--space-inset-base-xs);
+    --epods--space-inset-s: var(--epods--space-inset-base-s);
+    --epods--space-inset-m: var(--epods--space-inset-base-m);
+    --epods--space-inset-l: var(--epods--space-inset-base-l);
+    --epods--space-inset-xl: var(--epods--space-inset-base-xl);
+    /* */
+    /* Spacing - Inset squish */
+    /* ------------------------- */
+    --epods--space-inset-squish-s: var(--epods--space-inset-squish-base-st) var(--epods--space-inset-squish-base-sl);
+    --epods--space-inset-squish-m: var(--epods--space-inset-squish-base-mt) var(--epods--space-inset-squish-base-ml);
+    --epods--space-inset-squish-l: var(--epods--space-inset-squish-base-lt) var(--epods--space-inset-squish-base-ll);
+    /* */
+    /* Spacing - Inset strech */
+    /* ------------------------- */
+    --epods--space-inset-strech-s: var(--epods--space-inset-strech-st) var(--epods--space-inset-strech-sl);
+    --epods--space-inset-strech-m: var(--epods--space-inset-strech-mt) var(--epods--space-inset-strech-ml);
+    /* */
+    /* Spacing - Stack */
+    /* ------------------------- */
+    --epods--space-stack-xxs: 0 0 var(--epods--space-inset-base-xxs) 0;
+    --epods--space-stack-xs: 0 0 var(--epods--space-inset-base-xs) 0;
+    --epods--space-stack-s: 0 0 var(--epods--space-inset-base-s) 0;
+    --epods--space-stack-m: 0 0 var(--epods--space-inset-base-m) 0;
+    --epods--space-stack-l: 0 0 var(--epods--space-inset-base-l) 0;
+    --epods--space-stack-xl: 0 0 var(--epods--space-inset-base-xl) 0;
+    /* */
+    /* Spacing - Inline */
+    /* ------------------------- */
+    --epods--space-inline-xxs: 0 var(--epods--space-inset-base-xxs) 0 0;
+    --epods--space-inline-xs: 0 var(--epods--space-inset-base-xs) 0 0;
+    --epods--space-inline-s: 0 var(--epods--space-inset-base-s) 0 0;
+    --epods--space-inline-m: 0 var(--epods--space-inset-base-m) 0 0;
+    --epods--space-inline-l: 0 var(--epods--space-inset-base-l) 0 0;
+    --epods--space-inline-xl: 0 var(--epods--space-inset-base-xl) 0 0;
+  }
+}
+
+/* @media only screen and (min-width: 1921px) and (max-width: 2560px) */
+@media only screen and (min-width: 1921px) and (max-width: 5120px) {
+  :root {
+    /* */
+    /* Spacing - Inset square */
+    /* ------------------------- */
+    --epods--space-inset-xs: calc(var(--epods--space-inset-base-xs) * 1.125);
+    --epods--space-inset-s: calc(var(--epods--space-inset-base-s) * 1.125);
+    --epods--space-inset-m: calc(var(--epods--space-inset-base-m) * 1.125);
+    --epods--space-inset-l: calc(var(--epods--space-inset-base-l) * 1.125);
+    --epods--space-inset-xl: calc(var(--epods--space-inset-base-xl) * 1.125);
+    /* */
+    /* Spacing - Inset squish */
+    /* ------------------------- */
+    --epods--space-inset-squish-s: calc(var(--epods--space-inset-squish-base-st) * 1.125) calc(var(--epods--space-inset-squish-base-sl) * 1.125);
+    --epods--space-inset-squish-m: calc(var(--epods--space-inset-squish-base-mt) * 1.125) calc(var(--epods--space-inset-squish-base-ml) * 1.125);
+    --epods--space-inset-squish-l: calc(var(--epods--space-inset-squish-base-lt) * 1.125) calc(var(--epods--space-inset-squish-base-ll) * 1.125);
+    /* */
+    /* Spacing - Inset strech */
+    /* ------------------------- */
+    --epods--space-inset-strech-s: calc(var(--epods--space-inset-strech-st) * 1.125) calc(var(--epods--space-inset-strech-sl) * 1.125);
+    --epods--space-inset-strech-m: calc(var(--epods--space-inset-strech-mt) * 1.125) calc(var(--epods--space-inset-strech-ml) * 1.125);
+    /* */
+    /* Spacing - Stack */
+    /* ------------------------- */
+    --epods--space-stack-xxs: 0 0 calc(var(--epods--space-inset-base-xxs) * 1.125) 0;
+    --epods--space-stack-xs: 0 0 calc(var(--epods--space-inset-base-xs) * 1.125) 0;
+    --epods--space-stack-s: 0 0 calc(var(--epods--space-inset-base-s) * 1.125) 0;
+    --epods--space-stack-m: 0 0 calc(var(--epods--space-inset-base-m) * 1.125) 0;
+    --epods--space-stack-l: 0 0 calc(var(--epods--space-inset-base-l) * 1.125) 0;
+    --epods--space-stack-xl: 0 0 calc(var(--epods--space-inset-base-xl) * 1.125) 0;
+    /* */
+    /* Spacing - Inline */
+    /* ------------------------- */
+    --epods--space-inline-xxs: 0 calc(var(--epods--space-inset-base-xxs) * 1.125) 0 0;
+    --epods--space-inline-xs: 0 calc(var(--epods--space-inset-base-xs) * 1.125) 0 0;
+    --epods--space-inline-s: 0 calc(var(--epods--space-inset-base-s) * 1.125) 0 0;
+    --epods--space-inline-m: 0 calc(var(--epods--space-inset-base-m) * 1.125) 0 0;
+    --epods--space-inline-l: 0 calc(var(--epods--space-inset-base-l) * 1.125) 0 0;
+    --epods--space-inline-xl: 0 calc(var(--epods--space-inset-base-xl) * 1.125) 0 0;
+  }
+}
+
+@font-face {
+  font-family: "opensans-regular";
+  src: url("../fonts/Open_Sans/regular.eot?") format("eot"), url("../fonts/Open_Sans/regular.woff2") format("woff2"), url("../fonts/Open_Sans/regular.woff") format("woff"), url("../fonts/Open_Sans/regular.ttf") format("truetype"), url("../fonts/Open_Sans/regular.svg#opensans-regular") format("svg");
+}
+
+@font-face {
+  font-family: "opensans-semibold";
+  src: url("../fonts/Open_Sans/semibold.eot?") format("eot"), url("../fonts/Open_Sans/semibold.woff2") format("woff2"), url("../fonts/Open_Sans/semibold.woff") format("woff"), url("../fonts/Open_Sans/semibold.ttf") format("truetype"), url("../fonts/Open_Sans/semibold.svg#opensans-semibold") format("svg");
+}
+
+@font-face {
+  font-family: "opensans-bold";
+  src: url("../fonts/Open_Sans/bold.eot?") format("eot"), url("../fonts/Open_Sans/bold.woff2") format("woff2"), url("../fonts/Open_Sans/bold.woff") format("woff"), url("../fonts/Open_Sans/bold.ttf") format("truetype"), url("../fonts/Open_Sans/bold.svg#opensans-bold") format("svg");
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: var(--epods--font-primary);
+  color: var(--epods--color-brand-grey);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--epods--font-primary-bold);
+}
+
+h5, h6 {
+  font-family: var(--epods--font-primary);
+}
+
+p {
+  font-family: var(--epods--font-primary);
+}
+
+a {
+  color: var(--epods--color-link);
+}
+
+.semi-bold {
+  font-family: var(--epods--font-primary-semibold);
+}
+
+.bold {
+  font-family: var(--epods--font-primary-bold);
+}

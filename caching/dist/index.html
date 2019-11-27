@@ -2,16 +2,35 @@
 
 <head>
 	<link rel="manifest" href="mypwa.webmanifest">
+	<link rel="stylesheet" type="text/css" href="css/theme-corporate.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.css">
+
+	<script>
+		function jsonToHtml(data) {
+			return `
+ <div >
+	<h1>${data.name}</h1>	<p >Time: ${data.timestamp}</p>
+ </div>
+`;
+		}
+	</script>
+
 	<script type="module">
 		import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
 
+
+
+
 		async function handleCacheUpdate(cacheName, updatedURL) {
-					// Get the cached content and update
-					// the content on the page.
-					const cache = await  caches.open(cacheName);
-					const updatedResponse = await cache.match(updatedURL);
-					const updatedJson = await updatedResponse.text();
-					document.getElementById('slow-output2').innerHTML = updatedJson;
+			// Get the cached content and update
+			// the content on the page.
+			const cache = await caches.open(cacheName);
+			const updatedResponse = await cache.match(updatedURL);
+			const updatedJson = await updatedResponse.json();
+			document.getElementById('slow-output1').innerHTML = jsonToHtml(updatedJson);
 		}
 
 		if ('serviceWorker' in navigator) {
@@ -34,7 +53,7 @@
 				if (event.data.type === 'CACHE_UPDATED') {
 					const { cacheName, updatedURL } = event.data.payload;
 					console.log(`A newer version of ${updatedURL} is available!`);
-					handleCacheUpdate (cacheName, updatedURL);
+					handleCacheUpdate(cacheName, updatedURL);
 				}
 			})
 
@@ -43,7 +62,7 @@
 	</script>
 	<script>
 		function loadData() {
-		
+
 			function status(response) {
 				if (response.status >= 200 && response.status < 300) {
 					return Promise.resolve(response)
@@ -66,16 +85,18 @@
 					.then(json)
 					.then(function (data) {
 						console.log('Request ' + url + ' succeeded with JSON response', data);
-						document.getElementById(domIdForResult).innerHTML = JSON.stringify(data);
+						document.getElementById(domIdForResult).innerHTML = jsonToHtml(data);
 
 					}).catch(function (error) {
 						console.log('Request ' + url + ' failed', error);
 						document.getElementById(domIdForResult).innerHTML = error;
 					});
 			}
-			
-			callApi('./api/slow/data.json', 'slow-output1');
-			callApi('./api/fast/data.json', 'fast-output');
+
+			// inset /api agina here
+			var u = "https://beaglew01.internal.epo.org:31380/api";
+			callApi(u+'/slow', 'slow-output1');
+			callApi(u+'/fast', 'fast-output');
 
 		}
 
@@ -83,11 +104,33 @@
 </head>
 
 <body onload="loadData()">
-	<h1>Demonstration of caching with service worker</h1>
+	
+		<div class="space-inset-m">
+			<div class="grid">
+				<div class="col-superultrawide-48 space-stack-m epo-flex-center"
+					style="background: rgb(13, 80, 212); height: 80px;">
+					<h1 style="color: white; font-size: large;">Demonstration of caching with Service Worker</h1>
+				</div>
+			</div>
+			<div class="grid epo-flex-between">
+				<div id="fast-output" class="col-superultrawide-23 "
+					style="background: rgb(131, 197, 223); height: 100vh;">
 
-	<span id="slow-output1"></span>
-	<span id="slow-output2"></span>
-	<span id="fast-output"></span>
+				</div>
+				<div id="fast-output" class="col-superultrawide-2 "
+				style="background: rgb(255, 255, 255); height: 100vh;">
+
+			</div>
+				<div id="slow-output1" class="col-superultrawide-23 "
+					style="background: rgb(131, 197, 223); height: 100vh;">
+
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+
 </body>
 
 </html>

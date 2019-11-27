@@ -1,0 +1,412 @@
+@media screen and (max-width: 5120px) {
+  html body {
+    max-width: 5120px;
+    margin: 0 auto;
+    font-size: var(---epods--font-size-base-22);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-40);
+    line-height: calc(var(--epods--font-size-base-40) * 2.25);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-36);
+    line-height: calc(var(--epods--font-size-base-36) * 2.25);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-32);
+    line-height: calc(var(--epods--font-size-base-32) * 2.25);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-28);
+    line-height: calc(var(--epods--font-size-base-28) * 2.25);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-24);
+    line-height: calc(var(--epods--font-size-base-24) * 2.25);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 2.25);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-22);
+    line-height: calc(var(--epods--font-size-base-22) * 2.25);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-superultrawide-block {
+    display: block;
+  }
+  .epo-superultrawide-none {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 3840px) {
+  html body {
+    max-width: 3840px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-20);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-36);
+    line-height: calc(var(--epods--font-size-base-36) * 2);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-32);
+    line-height: calc(var(--epods--font-size-base-32) * 2);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-28);
+    line-height: calc(var(--epods--font-size-base-28) * 2);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-24);
+    line-height: calc(var(--epods--font-size-base-24) * 2);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 2);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 2);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 2);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-ultrawide-block {
+    display: block;
+  }
+  .epo-ultrawide-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  html body {
+    max-width: 2560px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-18);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-32);
+    line-height: calc(var(--epods--font-size-base-32) * 1.75);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-28);
+    line-height: calc(var(--epods--font-size-base-28) * 1.75);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-24);
+    line-height: calc(var(--epods--font-size-base-24) * 1.75);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 1.75);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 1.75);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-15);
+    line-height: calc(var(--epods--font-size-base-15) * 1.75);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 2.25);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-desktop-block {
+    display: block;
+  }
+  .epo-desktop-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
+  html body {
+    max-width: 2560px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-p);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-28);
+    line-height: calc(var(--epods--font-size-base-28) * 1.5);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-24);
+    line-height: calc(var(--epods--font-size-base-24) * 1.5);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-22);
+    line-height: calc(var(--epods--font-size-base-22) * 1.5);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 1.5);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-16);
+    line-height: calc(var(--epods--font-size-base-16) * 1.5);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 1.5);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-p);
+    line-height: calc(var(--epods--font-size-base-16) * 1.5);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-laptop-xl2-block {
+    display: block;
+  }
+  .epo-laptop-xl2-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  html body {
+    max-width: 1599px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-15);
+  }
+  html p,
+  html li,
+  html ol,
+  html span {
+    font-size: var(--epods--font-size-base-15);
+    line-height: calc(var(--epods--font-size-base-15) * 1.25);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-26);
+    line-height: calc(var(--epods--font-size-base-26) * 1.25);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-22);
+    line-height: calc(var(--epods--font-size-base-22) * 1.25);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 1.25);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 1.25);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-16);
+    line-height: calc(var(--epods--font-size-base-16) * 1.25);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 1.25);
+  }
+  .epo-laptop-block {
+    display: block;
+  }
+  .epo-laptop-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+  html body {
+    max-width: 1279px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-14);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-24);
+    line-height: calc(var(--epods--font-size-base-24) * 1);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 1);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 1);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-16);
+    line-height: calc(var(--epods--font-size-base-16) * 1);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 1);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-12);
+    line-height: calc(var(--epods--font-size-base-12) * 1);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-14);
+    line-height: var(--epods--font-size-base-20);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-tablet-lg-block {
+    display: block;
+  }
+  .epo-tablet-lg-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  html body {
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-13);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-22);
+    line-height: calc(var(--epods--font-size-base-22) * 0.9375);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 0.9375);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 0.9375);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-16);
+    line-height: calc(var(--epods--font-size-base-16) * 0.9375);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 0.9375);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-12);
+    line-height: calc(var(--epods--font-size-base-12) * 0.9375);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 0.9375);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-tablet-md-block {
+    display: block;
+  }
+  .epo-tablet-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  html body {
+    max-width: 414px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-base-14);
+  }
+  h1 {
+    font-size: var(--epods--font-size-base-20);
+    line-height: calc(var(--epods--font-size-base-20) * 0.9375);
+  }
+  h2 {
+    font-size: var(--epods--font-size-base-18);
+    line-height: calc(var(--epods--font-size-base-18) * 0.9375);
+  }
+  h3 {
+    font-size: var(--epods--font-size-base-16);
+    line-height: calc(var(--epods--font-size-base-16) * 0.9375);
+  }
+  h4 {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 0.9375);
+  }
+  h5 {
+    font-size: var(--epods--font-size-base-13);
+    line-height: calc(var(--epods--font-size-base-13) * 0.9375);
+  }
+  h6 {
+    font-size: var(--epods--font-size-base-12);
+    line-height: calc(var(--epods--font-size-base-12) * 0.9375);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-base-14);
+    line-height: calc(var(--epods--font-size-base-14) * 0.5);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-smartphone-sm-block {
+    display: block;
+  }
+  .epo-smartphone-sm-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html body {
+    max-width: 375px;
+    margin: 0 auto;
+    font-size: var(--epods--font-size-p);
+  }
+  h1 {
+    font-size: var(--epods--font-size-h1);
+    line-height: var(--epods--line-height-h1);
+  }
+  h2 {
+    font-size: var(--epods--font-size-h2);
+    line-height: var(--epods--line-height-h2);
+  }
+  h3 {
+    font-size: var(--epods--font-size-h3);
+    line-height: var(--epods--line-height-h3);
+  }
+  h4 {
+    font-size: var(--epods--font-size-h4);
+    line-height: var(--epods--line-height-h4);
+  }
+  h5 {
+    font-size: var(--epods--font-size-h5);
+    line-height: var(--epods--line-height-h5);
+  }
+  h6 {
+    font-size: var(--epods--font-size-h6);
+    line-height: var(--epods--line-height-h6);
+  }
+  p,
+  li,
+  ol,
+  span {
+    font-size: var(--epods--font-size-p);
+    line-height: var(--epods--line-height-p);
+    margin-bottom: var(--epods--space-inset-base-m);
+  }
+  .epo-smartphone-xs-block {
+    display: block;
+  }
+  .epo-smartphone-xs-none {
+    display: none;
+  }
+}
