@@ -79,7 +79,7 @@
 				fetch(url,
 					{
 						cache: 'no-cache', // only applies to browser cache
-						mode: 'same-origin'
+						mode: 'cors' // 'same-origin'
 					})
 					.then(status)
 					.then(json)
